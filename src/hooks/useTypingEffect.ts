@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-export function useTypingEffect(phrases: string[], typingSpeed = 80, deletingSpeed = 40, pauseDuration = 2000) {
+export function useTypingEffect(phrases: string[], typingSpeed = 120, deletingSpeed = 30, pauseDuration = 1500) {
   const [displayText, setDisplayText] = useState('')
   const [phraseIndex, setPhraseIndex] = useState(0)
   const [isDeleting, setIsDeleting] = useState(false)
