@@ -1,8 +1,47 @@
 import { motion } from 'framer-motion'
+import {
+  siReact, siNextdotjs, siTypescript, siJavascript, siHtml5, siCss, siTailwindcss,
+  siNodedotjs, siExpress, siMysql, siMariadb, siPrisma,
+  siGit, siGithub, siVercel, siRailway, siXampp,
+} from 'simple-icons'
+import type { SimpleIcon } from 'simple-icons'
 import { useLanguage } from '../context/LanguageContext'
 import SectionTitle from '../components/SectionTitle'
 import { skills } from '../data/skills'
 import type { Skill } from '../types'
+
+const siMap: Record<string, SimpleIcon> = {
+  siReact, siNextdotjs, siTypescript, siJavascript, siHtml5, siCss, siTailwindcss,
+  siNodedotjs, siExpress, siMysql, siMariadb, siPrisma,
+  siGit, siGithub, siVercel, siRailway, siXampp,
+}
+
+function isDark(hex: string) {
+  const r = parseInt(hex.slice(0, 2), 16)
+  const g = parseInt(hex.slice(2, 4), 16)
+  const b = parseInt(hex.slice(4, 6), 16)
+  return (r * 299 + g * 587 + b * 114) / 1000 < 40
+}
+
+function SkillIcon({ icon }: { icon: string }) {
+  if (icon.startsWith('/')) {
+    return <img src={icon} alt="" className="w-5 h-5 flex-shrink-0 object-contain" />
+  }
+  const si = siMap[icon]
+  if (si) {
+    const fill = isDark(si.hex) ? '#ffffff' : `#${si.hex}`
+    return (
+      <svg
+        role="img"
+        viewBox="0 0 24 24"
+        className="w-5 h-5 flex-shrink-0"
+        style={{ fill }}
+        dangerouslySetInnerHTML={{ __html: si.path }}
+      />
+    )
+  }
+  return <span className="text-lg leading-none">{icon}</span>
+}
 
 const categoryOrder: Skill['category'][] = ['frontend', 'backend', 'database', 'tools']
 
@@ -76,7 +115,7 @@ export default function Skills() {
                       whileHover={{ scale: 1.05 }}
                       className="group flex items-center gap-2 bg-black/30 border border-white/8 rounded-xl px-3 py-2 hover:bg-white/8 hover:border-white/15 transition-all cursor-default"
                     >
-                      <span className="text-lg leading-none">{skill.icon}</span>
+                      <SkillIcon icon={skill.icon} />
                       <span className="text-sm font-medium text-zinc-200 group-hover:text-white transition-colors">
                         {skill.name}
                       </span>

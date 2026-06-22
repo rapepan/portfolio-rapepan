@@ -22,6 +22,10 @@ Built to showcase my projects, skills, and background as a Full-stack Developer.
 | Styling | Tailwind CSS v4, Framer Motion |
 | i18n | Custom EN / TH context |
 
+## Author
+
+Designed and developed by **Rapepan Siriboonkong**
+
 ## Contact
 
 - Email: rapepan23.rpp@gmail.com
