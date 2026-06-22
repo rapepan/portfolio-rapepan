@@ -1,0 +1,17 @@
+{
+  "name": "Rapepan — Full-stack Developer",
+  "short_name": "Rapepan",
+  "description": "Full-stack Developer specializing in web applications, REST APIs, database systems, and real-time applications.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#09090b",
+  "theme_color": "#7c3aed",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
