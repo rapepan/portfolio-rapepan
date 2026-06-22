@@ -35,8 +35,7 @@ function SkillIcon({ icon }: { icon: string }) {
         role="img"
         viewBox="0 0 24 24"
         className="w-5 h-5 flex-shrink-0"
-        style={{ fill }}
-        dangerouslySetInnerHTML={{ __html: si.path }}
+        dangerouslySetInnerHTML={{ __html: `<path d="${si.path}" fill="${fill}"/>` }}
       />
     )
   }
