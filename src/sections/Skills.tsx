@@ -16,6 +16,9 @@ const siMap: Record<string, SimpleIcon> = {
   siGit, siGithub, siVercel, siRailway, siXampp,
 }
 
+const certIconKeys = ['🏅']
+const langFlags = ['🌐', '🌐', '🌐']
+
 function isDark(hex: string) {
   const r = parseInt(hex.slice(0, 2), 16)
   const g = parseInt(hex.slice(2, 4), 16)
@@ -151,9 +154,7 @@ export default function Skills() {
                     rel="noopener noreferrer"
                     className="flex items-start gap-3 bg-black/30 border border-white/8 rounded-xl px-3 py-2.5 hover:bg-white/8 hover:border-amber-500/30 transition-all group"
                   >
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 flex-shrink-0 mt-0.5">
-                      <path d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0" />
-                    </svg>
+                    <span className="text-lg leading-none mt-0.5">{certIconKeys[i]}</span>
                     <span className="text-sm text-zinc-200 group-hover:text-white transition-colors flex-1">{cert}</span>
                     <svg className="w-3.5 h-3.5 text-zinc-600 group-hover:text-amber-400 transition-colors mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -181,9 +182,7 @@ export default function Skills() {
               <div className="space-y-3">
                 {t.skills.langItems.map((lang) => (
                   <div key={lang} className="flex items-center gap-3 bg-black/30 border border-white/8 rounded-xl px-3 py-2.5">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#f43f5e" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 flex-shrink-0">
-                      <path d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802" />
-                    </svg>
+                    <span className="text-lg leading-none">{langFlags[t.skills.langItems.indexOf(lang)]}</span>
                     <span className="text-sm text-zinc-200">{lang}</span>
                   </div>
                 ))}
