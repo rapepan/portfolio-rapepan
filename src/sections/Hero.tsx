@@ -53,7 +53,7 @@ export default function Hero() {
           {/* Greeting + name */}
           <motion.div variants={item} className="mb-4">
             <p className="text-zinc-400 font-medium text-lg mb-2">{t.hero.greeting}</p>
-            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-black tracking-tight text-white leading-none">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight text-white leading-none">
               {t.hero.name}
               <span className="text-violet-400">.</span>
             </h1>

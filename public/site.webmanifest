@@ -1,6 +1,6 @@
 {
-  "name": "Rapepan — Full-stack Developer",
-  "short_name": "Rapepan",
+  "name": "Portfolio-Rapepan",
+  "short_name": "Portfolio-Rapepan",
   "description": "Full-stack Developer specializing in web applications, REST APIs, database systems, and real-time applications.",
   "start_url": "/",
   "display": "standalone",
