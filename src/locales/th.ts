@@ -30,22 +30,10 @@ const th: Translations = {
   },
   about: {
     title: 'เกี่ยวกับฉัน',
-    subtitle: 'สร้างอนาคต ทีละบรรทัด',
-    p1: 'ฉันเป็นนักพัฒนา Full-stack ที่สร้างเว็บแอปพลิเคชันด้วย React และ Next.js ฝั่ง Frontend และ Node.js กับ Express.js ฝั่ง Backend โปรเจกต์ของฉันครอบคลุมตั้งแต่ระบบจัดการคลินิกกายภาพบำบัด ระบบเช่า ไปจนถึงแพลตฟอร์มสั่งอาหารแบบเรียลไทม์',
-    p2: 'ฉันทำงานกับฐานข้อมูลเชิงสัมพันธ์ (MySQL และ MariaDB) พัฒนาระบบ Authentication ด้วย JWT เชื่อมต่อ Cloudinary สำหรับจัดเก็บไฟล์ และสร้างฟีเจอร์เรียลไทม์ด้วย Socket.IO',
-    p3: 'ทุกโปรเจกต์ที่ฉันสร้างถูก Deploy ขึ้น Production จริง ทั้งบน Vercel, Railway และ Melon Cloud ทำให้ฉันมีประสบการณ์จริงครอบคลุมทั้ง Development และ Deployment Pipeline',
-    stats: {
-      projects: 'โปรเจกต์บน GitHub',
-      techs: 'เทคโนโลยีที่ใช้จริง',
-      focus: 'ด้านที่เชี่ยวชาญ',
-    },
-    focusAreas: [
-      'การพัฒนาเว็บแบบ Full-stack',
-      'ออกแบบและพัฒนา REST API',
-      'ออกแบบฐานข้อมูลเชิงสัมพันธ์ (MySQL / MariaDB)',
-      'พัฒนาแอปพลิเคชันแบบ Real-time (Socket.IO)',
-    ],
-    focusAreasLabel: 'ด้านที่เชี่ยวชาญ',
+    subtitle: 'เกี่ยวกับ',
+    headline: 'นักพัฒนาที่ลงมือทำจริง',
+    bio: 'นักพัฒนาที่เพิ่งสำเร็จการศึกษาสาขาเทคโนโลยีสารสนเทศ มีประสบการณ์ลงมือพัฒนาเว็บแอปพลิเคชัน Full-stack จากโปรเจกต์ทางวิชาการและส่วนตัว เชี่ยวชาญ JavaScript, Node.js, Express.js, React และ MySQL มีความรู้ด้าน Backend Development, RESTful APIs, การออกแบบฐานข้อมูล และการ Deploy พร้อมนำทักษะไปใช้และเรียนรู้เทคโนโลยีใหม่ๆ ในสภาพแวดล้อมการทำงานจริง',
+    hobbies: ['ดนตรี', 'เกม', 'หนัง', 'กาแฟ'],
   },
   skills: {
     title: 'ทักษะและเทคโนโลยี',
@@ -62,8 +50,8 @@ const th: Translations = {
     langItems: ['ไทย — ภาษาหลัก', 'อังกฤษ — พอใช้', 'จีน — พื้นฐาน (HSK ระดับ 2)'],
   },
   projects: {
-    title: 'โปรเจกต์เด่น',
-    subtitle: 'ผลงานที่ฉันได้สร้างขึ้น',
+    title: 'โปรเจกต์ล่าสุด.',
+    subtitle: 'ผลงานที่เลือกสรร',
     github: 'GitHub',
     demo: 'ดูตัวอย่าง',
     items: {
@@ -90,9 +78,47 @@ const th: Translations = {
     },
   },
   experience: {
-    title: 'ประสบการณ์',
-    subtitle: 'เส้นทางวิชาชีพของฉัน',
+    title: 'ประสบการณ์.',
+    subtitle: 'เส้นทาง',
     educationTitle: 'การศึกษา',
+    items: {
+      pthxp: {
+        role: 'นักพัฒนา Full-stack',
+        org: 'ระบบจัดการคลินิกกายภาพบำบัด PTH-X-P',
+        period: 'ม.ค. 2568',
+        bullets: [
+          'พัฒนาระบบจัดการคลินิกกายภาพบำบัดเป็นโปรเจกต์วิทยานิพนธ์',
+          'ครอบคลุมการลงทะเบียนผู้ป่วย บันทึกการรักษา การวินิจฉัย และการเรียกเก็บเงิน',
+          'พัฒนาระบบสร้าง PDF ด้วย Puppeteer และ Authentication ด้วย Passport.js',
+          'รองรับ 3 ระดับสิทธิ์: ผู้ดูแลระบบ นักกายภาพบำบัด และเจ้าหน้าที่',
+          'Stack: Node.js, Express.js, EJS, MySQL/MariaDB',
+        ],
+      },
+      rental: {
+        role: 'นักพัฒนา Full-stack',
+        org: 'ระบบเช่าห้องพัก',
+        period: 'เม.ย. 2569',
+        bullets: [
+          'พัฒนาแพลตฟอร์มเช่าห้องพักพร้อมระบบ 3 บทบาท: ผู้เช่า เจ้าของห้อง และแอดมิน',
+          'พัฒนา JWT Authentication, รายการห้องพัก, ระบบค้นหา/กรอง และจัดการรูปภาพ',
+          'เชื่อมต่อ Google Maps API และ Cloudinary สำหรับอัปโหลดรูปภาพ',
+          'Deploy Frontend บน Vercel และ Backend บน Railway',
+          'Stack: React, Node.js, Express.js, MariaDB',
+        ],
+      },
+      qr: {
+        role: 'นักพัฒนา Full-stack',
+        org: 'ระบบสั่งอาหารผ่าน QR Code',
+        period: 'มิ.ย. 2569',
+        bullets: [
+          'พัฒนาระบบสั่งอาหาร Real-time ผ่าน QR Code พร้อม 2 Frontend (ลูกค้าและแอดมิน)',
+          'ระบบอัปเดตสถานะคำสั่งซื้อแบบ Real-time ด้วย Socket.IO',
+          'Dashboard สำหรับแอดมินจัดการออเดอร์ เมนู โต๊ะ และสถิติ',
+          'JWT Authentication พร้อม Refresh Token, Rate Limiting และ Helmet.js',
+          'Stack: Next.js 14, Node.js, Express.js, MariaDB, Socket.IO, Cloudinary',
+        ],
+      },
+    },
     education: {
       burapha: {
         degree: 'วิทยาศาสตรบัณฑิต',
@@ -109,28 +135,6 @@ const th: Translations = {
         location: 'ฉะเชิงเทรา, ไทย',
         period: '– 2565',
         gpa: '',
-      },
-    },
-    items: {
-      fullstack: {
-        title: 'การพัฒนา Full-stack',
-        description:
-          'พัฒนาเว็บแอปพลิเคชันแบบครบวงจร ออกแบบระบบตั้งแต่ฐานข้อมูลจนถึง UI โดยมุ่งเน้นประสิทธิภาพและความง่ายในการบำรุงรักษา',
-      },
-      webdev: {
-        title: 'การพัฒนาเว็บแอปพลิเคชัน',
-        description:
-          'สร้างเว็บแอปพลิเคชันที่ตอบสนองได้ดี เข้าถึงง่าย และมีประสิทธิภาพสูง โดยใช้ React, TypeScript และ CSS Framework สมัยใหม่',
-      },
-      database: {
-        title: 'การออกแบบฐานข้อมูล',
-        description:
-          'ออกแบบ Schema ฐานข้อมูลเชิงสัมพันธ์ที่มีประสิทธิภาพ เขียน Query ที่ปรับปรุงแล้ว และนำ Data Integrity Constraints ไปใช้',
-      },
-      api: {
-        title: 'การพัฒนา Backend API',
-        description:
-          'ออกแบบและพัฒนา RESTful APIs ด้วย Node.js และ Express.js รวมถึงระบบ JWT Authentication, การ Validate ข้อมูล และการสื่อสารแบบ Real-time ด้วย Socket.IO',
       },
     },
   },

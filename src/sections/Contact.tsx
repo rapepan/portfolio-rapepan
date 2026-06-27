@@ -107,7 +107,7 @@ export default function Contact() {
               </div>
               <p className="text-xs font-semibold uppercase tracking-wider text-zinc-500 mb-1">Email</p>
               <p className="text-sm font-mono text-zinc-200 mb-4 break-all">{email}</p>
-              <div className="flex gap-2 justify-center">
+              <div className="flex flex-wrap gap-2 justify-center">
                 <a
                   href={`mailto:${email}`}
                   className="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-violet-600 hover:bg-violet-500 px-3 py-2 rounded-lg transition-colors shadow-lg shadow-violet-600/20"

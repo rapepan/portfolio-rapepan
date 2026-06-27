@@ -21,6 +21,7 @@ const item = {
 export default function Hero() {
   const { t } = useLanguage()
   const typedText = useTypingEffect(t.hero.typingPhrases)
+  const edu = t.experience.education.burapha
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -28,54 +29,56 @@ export default function Hero() {
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-violet-600/12 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-indigo-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-violet-800/5 rounded-full blur-3xl" />
-        {/* Grid overlay */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage:
-              'linear-gradient(rgba(255,255,255,0.3) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.3) 1px,transparent 1px)',
-            backgroundSize: '64px 64px',
-          }}
-        />
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.3) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.3) 1px,transparent 1px)', backgroundSize: '64px 64px' }} />
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
         <motion.div variants={container} initial="hidden" animate="visible">
-          {/* Location badge */}
+
+          {/* Status badge */}
           <motion.div variants={item} className="flex justify-center mb-8">
-            <span className="inline-flex items-center gap-2 text-xs font-medium text-zinc-400 bg-white/5 border border-white/8 rounded-full px-4 py-1.5 backdrop-blur-sm">
+            <span className="inline-flex items-center gap-2 text-xs font-medium text-zinc-400 bg-white/5 border border-white/8 rounded-full px-4 py-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
               {t.hero.location}
             </span>
           </motion.div>
 
-          {/* Greeting + name */}
+          {/* Name — large & uppercase */}
           <motion.div variants={item} className="mb-4">
-            <p className="text-zinc-400 font-medium text-lg mb-2">{t.hero.greeting}</p>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight text-white leading-none">
+            <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight text-white leading-none uppercase">
               {t.hero.name}
-              <span className="text-violet-400">.</span>
             </h1>
+            {/* Gradient underline */}
+            <div className="mx-auto mt-3 h-1 w-32 sm:w-48 rounded-full bg-gradient-to-r from-violet-500 via-indigo-400 to-cyan-400" />
           </motion.div>
 
           {/* Role */}
-          <motion.div variants={item} className="mb-6">
+          <motion.div variants={item} className="mb-4 mt-6">
             <p className="text-xl sm:text-2xl font-semibold text-zinc-300">{t.hero.role}</p>
           </motion.div>
 
           {/* Typing effect */}
-          <motion.div variants={item} className="mb-8 h-10 flex items-center justify-center">
-            <div className="font-mono text-lg sm:text-xl text-violet-400 font-medium">
+          <motion.div variants={item} className="mb-6 h-9 flex items-center justify-center">
+            <div className="font-mono text-base sm:text-lg text-violet-400 font-medium">
               <span>{typedText}</span>
               <span className="inline-block w-0.5 h-5 bg-violet-400 ml-0.5 animate-pulse align-middle" />
             </div>
           </motion.div>
 
           {/* Bio */}
-          <motion.p variants={item} className="text-zinc-400 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+          <motion.p variants={item} className="text-zinc-400 text-base sm:text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
             {t.hero.bio}
           </motion.p>
+
+          {/* Education badges */}
+          <motion.div variants={item} className="flex flex-wrap items-center justify-center gap-2 mb-8">
+            <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-zinc-300 bg-white/6 border border-white/10 rounded-full px-3.5 py-1.5">
+              {edu.school.replace('University', 'Univ.')} · {edu.gpa}
+            </span>
+            <span className="inline-flex items-center text-xs font-semibold uppercase tracking-wider text-zinc-400 bg-white/4 border border-white/8 rounded-full px-3.5 py-1.5">
+              {edu.major}
+            </span>
+          </motion.div>
 
           {/* CTA buttons */}
           <motion.div variants={item} className="flex flex-wrap items-center justify-center gap-3">
@@ -92,9 +95,6 @@ export default function Hero() {
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-violet-600 hover:bg-violet-500 text-white text-sm font-semibold rounded-lg transition-colors shadow-lg shadow-violet-600/30"
             >
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19 11H5m14 0l-4-4m4 4l-4 4" />
-              </svg>
               {t.hero.cta.projects}
             </button>
             <button

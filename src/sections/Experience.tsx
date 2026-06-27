@@ -1,63 +1,19 @@
 import { motion } from 'framer-motion'
 import { useLanguage } from '../context/LanguageContext'
-import SectionTitle from '../components/SectionTitle'
-import type { ReactNode } from 'react'
 
-const experienceIcons: Record<string, ReactNode> = {
-  fullstack: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-      <path d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
-    </svg>
-  ),
-  webdev: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-      <path d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
-    </svg>
-  ),
-  database: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-      <path d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 5.625c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
-    </svg>
-  ),
-  api: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-      <path d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z" />
-    </svg>
-  ),
-}
+const experienceOrder = ['pthxp', 'rental', 'qr'] as const
 
+const expIconColors = [
+  'bg-violet-500 shadow-violet-500/40',
+  'bg-cyan-500 shadow-cyan-500/40',
+  'bg-emerald-500 shadow-emerald-500/40',
+] as const
 
-const experienceColors: Record<string, { dot: string; line: string; bg: string; border: string }> = {
-  fullstack: {
-    dot: 'bg-violet-500 shadow-violet-500/40',
-    line: 'border-violet-500/30',
-    bg: 'from-violet-600/10 to-transparent',
-    border: 'border-violet-500/20 hover:border-violet-500/40',
-  },
-  webdev: {
-    dot: 'bg-cyan-500 shadow-cyan-500/40',
-    line: 'border-cyan-500/30',
-    bg: 'from-cyan-600/10 to-transparent',
-    border: 'border-cyan-500/20 hover:border-cyan-500/40',
-  },
-  database: {
-    dot: 'bg-blue-500 shadow-blue-500/40',
-    line: 'border-blue-500/30',
-    bg: 'from-blue-600/10 to-transparent',
-    border: 'border-blue-500/20 hover:border-blue-500/40',
-  },
-  api: {
-    dot: 'bg-emerald-500 shadow-emerald-500/40',
-    line: 'border-emerald-500/30',
-    bg: 'from-emerald-600/10 to-transparent',
-    border: 'border-emerald-500/20 hover:border-emerald-500/40',
-  },
-}
-
-const experienceOrder = ['fullstack', 'webdev', 'database', 'api'] as const
-const educationOrder = ['burapha', 'bangbo'] as const
-
-const educationColors = ['from-indigo-600/10', 'from-sky-600/10'] as const
+const expIcons = [
+  <svg key="pth" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>,
+  <svg key="rent" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><path d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>,
+  <svg key="qr" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><path d="M3.75 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 013.75 9.375v-4.5zm0 9.75c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5a1.125 1.125 0 01-1.125-1.125v-4.5zm9.75-9.75c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0113.5 9.375v-4.5z" /></svg>,
+]
 
 export default function Experience() {
   const { t } = useLanguage()
@@ -69,46 +25,65 @@ export default function Experience() {
       </div>
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
-        <SectionTitle title={t.experience.title} subtitle={t.experience.subtitle} />
+        {/* Section label */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+          className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-violet-400 mb-5"
+        >
+          <span className="w-8 h-px bg-violet-400/50" />
+          {t.experience.subtitle}
+        </motion.div>
 
+        {/* Headline */}
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.05 }}
+          className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight mb-14"
+        >
+          {t.experience.title}
+        </motion.h2>
+
+        {/* Experience timeline */}
         <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-violet-500/40 via-white/8 to-transparent" />
+          <div className="absolute left-5 top-0 bottom-0 w-px bg-gradient-to-b from-violet-500/40 via-white/8 to-transparent" />
 
           <div className="space-y-6">
             {experienceOrder.map((key, i) => {
-              const expT = t.experience.items[key]
-              const colors = experienceColors[key]
-
+              const item = t.experience.items[key]
               return (
                 <motion.div
                   key={key}
-                  initial={{ opacity: 0, x: -30 }}
+                  initial={{ opacity: 0, x: -24 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.15, duration: 0.55 }}
-                  className="relative flex gap-6 group"
+                  transition={{ delay: i * 0.12, duration: 0.5 }}
+                  className="relative flex gap-5"
                 >
-                  {/* Timeline dot */}
-                  <div className="relative flex-shrink-0">
-                    <div
-                      className={`w-12 h-12 rounded-2xl ${colors.dot} shadow-lg flex items-center justify-center text-xl z-10 relative`}
-                    >
-                      {experienceIcons[key]}
-                    </div>
+                  <div className={`w-10 h-10 rounded-xl ${expIconColors[i]} shadow-lg flex items-center justify-center flex-shrink-0 z-10`}>
+                    {expIcons[i]}
                   </div>
 
-                  {/* Card */}
-                  <div
-                    className={`flex-1 relative overflow-hidden rounded-2xl border bg-white/2 p-5 mb-2 ${colors.border} transition-all hover:bg-white/4`}
-                  >
-                    <div className={`absolute inset-0 bg-gradient-to-r ${colors.bg} opacity-60`} />
-                    <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-
-                    <div className="relative">
-                      <h3 className="text-base font-bold text-white mb-1.5">{expT.title}</h3>
-                      <p className="text-sm text-zinc-400 leading-relaxed">{expT.description}</p>
+                  <div className="flex-1 bg-white/2 border border-white/8 rounded-2xl px-5 py-4 hover:bg-white/4 transition-colors mb-2">
+                    <div className="flex items-start justify-between gap-4 mb-2">
+                      <div className="min-w-0">
+                        <p className="text-xs font-semibold uppercase tracking-widest text-violet-400 mb-0.5">{item.role}</p>
+                        <p className="text-base font-bold text-white break-words">{item.org}</p>
+                      </div>
+                      <span className="text-xs text-zinc-500 whitespace-nowrap pt-0.5 flex-shrink-0">{item.period}</span>
                     </div>
+                    <ul className="space-y-1.5 mt-3">
+                      {item.bullets.map((b, bi) => (
+                        <li key={bi} className="flex items-start gap-2 text-sm text-zinc-400">
+                          <span className="text-violet-500 mt-1 flex-shrink-0">•</span>
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </motion.div>
               )
@@ -116,52 +91,6 @@ export default function Experience() {
           </div>
         </div>
 
-        {/* Education */}
-        <div className="mt-16 pt-10 border-t border-white/6 max-w-3xl mx-auto">
-          <p className="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-8 pl-[4.5rem]">
-            {t.experience.educationTitle}
-          </p>
-          <div className="relative">
-            <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-indigo-500/40 via-white/8 to-transparent" />
-            <div className="space-y-6">
-              {educationOrder.map((key, i) => {
-                const edu = t.experience.education[key]
-                return (
-                  <motion.div
-                    key={key}
-                    initial={{ opacity: 0, x: -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.15, duration: 0.55 }}
-                    className="relative flex gap-6 group"
-                  >
-                    <div className="relative flex-shrink-0">
-                      <div className="w-12 h-12 rounded-2xl bg-indigo-500 shadow-lg shadow-indigo-500/40 flex items-center justify-center text-xl z-10 relative">
-                        🎓
-                      </div>
-                    </div>
-                    <div
-                      className={`flex-1 relative overflow-hidden rounded-2xl border bg-white/2 p-5 mb-2 border-indigo-500/20 hover:border-indigo-500/40 transition-all hover:bg-white/4`}
-                    >
-                      <div className={`absolute inset-0 bg-gradient-to-r ${educationColors[i]} to-transparent opacity-60`} />
-                      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-                      <div className="relative">
-                        <h3 className="text-base font-bold text-white mb-0.5">{edu.school}</h3>
-                        <p className="text-sm text-indigo-300 font-medium mb-1">{edu.major}</p>
-                        <p className="text-xs text-zinc-500">
-                          {edu.degree} · {edu.period}
-                        </p>
-                        {edu.gpa && (
-                          <p className="text-xs text-emerald-400 font-semibold mt-1.5">{edu.gpa}</p>
-                        )}
-                      </div>
-                    </div>
-                  </motion.div>
-                )
-              })}
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   )

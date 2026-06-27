@@ -28,22 +28,10 @@ const en = {
   },
   about: {
     title: 'About Me',
-    subtitle: 'Building the future, one line at a time',
-    p1: "I'm a Full-stack Developer who has built web applications using React and Next.js on the frontend, and Node.js with Express.js on the backend. My projects range from a physical therapy clinic management system to a real-time restaurant ordering platform.",
-    p2: 'I work with relational databases (MySQL and MariaDB), implement JWT-based authentication, integrate Cloudinary for media storage, and build real-time features using Socket.IO.',
-    p3: 'Every project I build is deployed to production — using Vercel for frontends, Railway and Melon Cloud for backends — giving me hands-on experience across the full deployment pipeline.',
-    stats: {
-      projects: 'Projects on GitHub',
-      techs: 'Technologies Used',
-      focus: 'Areas of Focus',
-    },
-    focusAreas: [
-      'Full-stack Web Development',
-      'REST API Design & Development',
-      'Relational Database Design (MySQL / MariaDB)',
-      'Real-time Application Development (Socket.IO)',
-    ],
-    focusAreasLabel: 'Focus Areas',
+    subtitle: 'About',
+    headline: 'A developer who ships.',
+    bio: "Recent Information Technology graduate with hands-on experience in developing full-stack web applications through academic and personal projects. Skilled in JavaScript, Node.js, Express.js, React, and MySQL, with strong knowledge of backend development, RESTful APIs, database design, and web deployment. Eager to apply technical skills and continuously learn new technologies in a professional environment.",
+    hobbies: ['Music', 'Gaming', 'Films', 'Coffee'],
   },
   skills: {
     title: 'Skills & Technologies',
@@ -60,8 +48,8 @@ const en = {
     langItems: ['Thai — Native', 'English — Fair', 'Chinese — Basic (HSK Level 2)'],
   },
   projects: {
-    title: 'Featured Projects',
-    subtitle: 'A selection of things I have built',
+    title: 'Recent projects.',
+    subtitle: 'Selected Work',
     github: 'GitHub',
     demo: 'Live Demo',
     items: {
@@ -88,9 +76,47 @@ const en = {
     },
   },
   experience: {
-    title: 'Experience',
-    subtitle: 'My professional journey',
+    title: 'Experience.',
+    subtitle: 'Journey',
     educationTitle: 'Education',
+    items: {
+      pthxp: {
+        role: 'Full-stack Developer',
+        org: 'PTH-X-P Clinic System',
+        period: 'Jan 2025',
+        bullets: [
+          'Built a physical therapy clinic management system as an undergraduate thesis',
+          'Covered patient registration, medical records, diagnosis, treatment procedures, and billing',
+          'Implemented PDF generation with Puppeteer and Passport.js authentication',
+          'Supported 3 role levels: admin, physical therapist, and staff',
+          'Stack: Node.js, Express.js, EJS, MySQL/MariaDB',
+        ],
+      },
+      rental: {
+        role: 'Full-stack Developer',
+        org: 'Rental System',
+        period: 'Apr 2026',
+        bullets: [
+          'Built a rental property platform with tenant, landlord, and admin roles',
+          'Implemented JWT authentication, property listings, search/filter, and image management',
+          'Integrated Google Maps API for location and Cloudinary for image uploads',
+          'Deployed frontend on Vercel and backend on Railway',
+          'Stack: React, Node.js, Express.js, MariaDB',
+        ],
+      },
+      qr: {
+        role: 'Full-stack Developer',
+        org: 'QR Restaurant',
+        period: 'Jun 2026',
+        bullets: [
+          'Built a real-time QR code ordering system for restaurants with dual frontends (customer & admin)',
+          'Implemented real-time order updates via Socket.IO events',
+          'Admin dashboard with order management, menu, table, and statistics modules',
+          'JWT authentication with refresh tokens, rate limiting, and Helmet.js security headers',
+          'Stack: Next.js 14, Node.js, Express.js, MariaDB, Socket.IO, Cloudinary',
+        ],
+      },
+    },
     education: {
       burapha: {
         degree: 'Bachelor of Science',
@@ -107,28 +133,6 @@ const en = {
         location: 'Chachoengsao, Thailand',
         period: '– 2022',
         gpa: '',
-      },
-    },
-    items: {
-      fullstack: {
-        title: 'Full-stack Development',
-        description:
-          'End-to-end web application development, architecting systems from database to UI with a focus on performance and maintainability.',
-      },
-      webdev: {
-        title: 'Web Application Development',
-        description:
-          'Building responsive, accessible, and performant web applications using React, TypeScript, and modern CSS frameworks.',
-      },
-      database: {
-        title: 'Database Design',
-        description:
-          'Designing efficient relational database schemas, writing optimized queries, and implementing data integrity constraints.',
-      },
-      api: {
-        title: 'Backend API Development',
-        description:
-          'Architecting and implementing RESTful APIs with Node.js and Express.js, including JWT authentication, input validation, and real-time communication via Socket.IO.',
       },
     },
   },
