@@ -100,7 +100,15 @@ export default function Projects() {
               >
                 {/* Image area */}
                 <div className="relative h-52 overflow-hidden">
-                  {illustrations[i]}
+                  {project.image ? (
+                    <img
+                      src={project.image}
+                      alt={projT.title}
+                      className="w-full h-full object-cover object-top"
+                    />
+                  ) : (
+                    illustrations[i]
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent opacity-60" />
 
                   {/* Arrow link */}

@@ -7,6 +7,7 @@ export interface Project {
   tech: string[]
   github: string
   demo: string
+  image?: string
   color: string
   year: string
   category: string
